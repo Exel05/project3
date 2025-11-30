@@ -1,0 +1,103 @@
+body {
+  font-family: "Karla", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url("../image/gambar-1.jpg") center/cover no-repeat;
+  overflow: hidden; /* hilangkan scroll */
+  margin: 0;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-width: 950px;
+  width: 90%;
+  height: 550px; /* agar proporsional */
+}
+
+.login-card-img {
+  flex: 1;
+  background: url("../image/gambar-1.jpg") center/cover no-repeat;
+}
+
+.login-card .card-body {
+  flex: 1;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-card-description {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.login-card form {
+  max-width: 100%;
+}
+
+.login-card .form-control {
+  border: 1px solid #d5dae2;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-card .login-btn {
+  padding: 10px;
+  background-color: #fbbf24; /* kuning gym-style */
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.login-card .login-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.login-card-footer-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-card-footer-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-card-footer-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .login-card-img {
+    height: 200px;
+  }
+
+  .login-card .card-body {
+    padding: 30px 25px;
+  }
+}
