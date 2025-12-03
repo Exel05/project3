@@ -18,7 +18,7 @@
 <!-- ======================= NAVBAR ======================= -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase" href="#">Gymate</a>
+        <a class="navbar-brand fw-bold text-uppercase" href="#">GymBro</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
