@@ -28,12 +28,6 @@ jobs:
         fi
         echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
         echo "✅ Found project at: $PROJECT_PATH"
-
-    - name: Gset origin
-      working-directory: ${{ env.PROJECT_PATH }}
-      run: |
-
-        git remote set-url origin https://github.com/Exel05/project3
         
     # Step 1: Ambil kode terbaru dari branch master
     - name: Pull latest changes
