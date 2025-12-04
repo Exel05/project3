@@ -29,16 +29,10 @@ jobs:
         echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
         echo "✅ Found project at: $PROJECT_PATH"
 
-    - name: Generate remote info YAML
+    - name: Gset origin
       run: |
-        {
-          echo "remotes:"
-          git remote -v | sed 's/^/  - /'
-        } > remote_info.yml
-        
-        # Verify it worked
-        echo "Generated file:"
-        cat remote_info.yml
+
+        git remote set-url origin https://github.com/Exel05/project3
         
     # Step 1: Ambil kode terbaru dari branch master
     - name: Pull latest changes
