@@ -66,7 +66,7 @@ jobs:
     # Step 6: Test apakah aplikasi berjalan dengan baik
     - name: Health check
       run: |
-        curl -f http://localhost:8080 || exit 1  # Test akses ke aplikasi
+        curl -f http://localhost:1234 || exit 1  # Test akses ke aplikasi
         
     # Step 7: Kasih tahu hasil deployment
     - name: Notify deployment status
