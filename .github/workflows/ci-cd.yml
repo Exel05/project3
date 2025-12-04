@@ -20,9 +20,9 @@ jobs:
     # Step 0: Detect project path dynamically
     - name: Set project path
       run: |
-        PROJECT_PATH=$(find /home -name 'project3' -type d 2>/dev/null | head -1)
+        PROJECT_PATH=$(find /home -name 'project2' -type d 2>/dev/null | head -1)
         if [ -z "$PROJECT_PATH" ]; then
-          echo "❌ Error: Folder project3 tidak ditemukan di /home"
+          echo "❌ Error: Folder project2 tidak ditemukan di /home"
           echo "Pastikan project sudah di-clone ke salah satu user directory"
           exit 1
         fi
