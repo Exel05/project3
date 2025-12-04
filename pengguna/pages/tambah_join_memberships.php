@@ -74,7 +74,7 @@ if ($id_memberships) {
                                         <input type="text" id="total_harga" name="total_harga"
                                             class="form-control"
                                             value="<?= $harga ? 'Rp ' . number_format($harga, 0, ',', '.') : ''; ?>" readonly>
-                                        <input type="hidden" name="harga_asli" value="<?= $harga; ?>">
+                                        <input type="hidden" name="harga" value="<?= $harga; ?>">
                                         <div class="form-control-icon">
                                             <i class="bi bi-cash"></i>
                                         </div>

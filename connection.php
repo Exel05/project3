@@ -1,8 +1,8 @@
 <?php
-    $host = "localhost";
+    $host = "mysql";
     $user = "root";
-    $pass = "";
-    $db = "db_membership_new";
+    $pass = "password";
+    $db = "gym_memberships";
 
     $conn = mysqli_connect($host, $user, $pass, $db);
 

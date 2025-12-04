@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  # Nginx Web Server (Custom Build)
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "1234:80"
+    volumes:
+      - .:/var/www/gym_memberships
+    depends_on:
+      - php
+    networks:
+      - app-network
+
+  # PHP-FPM (untuk Nginx)
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "1000:1000"
+    working_dir: /var/www/gym_memberships
+    volumes:
+      - .:/var/www/gym_memberships
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=myapp
+      - DB_USER=root
+      - DB_PASSWORD=password
+    networks:
+      - app-network
+
+  # MySQL Database Server
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3310:3306"
+    networks:
+      - app-network
+
+  # phpMyAdmin untuk Database Management
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8085:80"
+    environment:
+      - PMA_HOST=mysql
+      - MYSQL_ROOT_PASSWORD=password
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+# Persistent Volume untuk MySQL Data
+volumes:
+  mysql_data:
+
+# Custom Network untuk Container Communication
+networks:
+  app-network:
+    driver: bridge

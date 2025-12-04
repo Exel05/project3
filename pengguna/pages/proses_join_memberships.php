@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Mengambil data dari form dengan fungsi trim() agar tidak ada spasi di awal/akhir
     $id_user = trim($_POST['id_user']);
     $id_memberships = trim($_POST['id_memberships']);
-    $total_harga = trim($_POST['harga_asli']);
+    $total_harga = trim($_POST['harga']);
     $payments = trim($_POST['payments']);
 
 
