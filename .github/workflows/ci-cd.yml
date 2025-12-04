@@ -13,8 +13,8 @@ on:
   workflow_dispatch:      # Bisa dijalankan manual juga
 
 jobs:
-  exelpc:
-    runs-on: [exelpc]
+  deploy:
+    runs-on: ["self-hosted", "Linux", "X64"]
     
     steps:
     # Step 0: Detect project path dynamically
