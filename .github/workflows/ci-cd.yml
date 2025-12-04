@@ -31,7 +31,7 @@ jobs:
 
     - name: check origin
       run: | 
-        git remote -v > remote-info.yml
+        echo "remotes:" > remote_info.yml && git remote -v | while read line; do echo "  - $line"; done >> remote_info.yml
         
     # Step 1: Ambil kode terbaru dari branch master
     - name: Pull latest changes
