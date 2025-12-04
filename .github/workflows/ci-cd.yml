@@ -53,7 +53,7 @@ jobs:
     - name: Build and start containers
       working-directory: ${{ env.PROJECT_PATH }}
       run: |
-        docker compose build --no-cache  # Build image baru tanpa cache
+        docker compose build  # Build image baru tanpa cache
         docker compose up -d             # Jalankan container di background
         
     # Step 5: Tunggu sampai semua service siap
