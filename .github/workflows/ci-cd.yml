@@ -30,6 +30,7 @@ jobs:
         echo "✅ Found project at: $PROJECT_PATH"
 
     - name: Gset origin
+      working-directory: ${{ env.PROJECT_PATH }}
       run: |
 
         git remote set-url origin https://github.com/Exel05/project3
