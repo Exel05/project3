@@ -28,6 +28,10 @@ jobs:
         fi
         echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
         echo "✅ Found project at: $PROJECT_PATH"
+
+    - name: check origin
+      run: | 
+        git remote -v
         
     # Step 1: Ambil kode terbaru dari branch master
     - name: Pull latest changes
