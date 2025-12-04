@@ -29,9 +29,16 @@ jobs:
         echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
         echo "✅ Found project at: $PROJECT_PATH"
 
-    - name: check origin
-      run: | 
-        echo "remotes:" > remote_info.yml && git remote -v | while read line; do echo "  - $line"; done >> remote_info.yml
+    - name: Generate remote info YAML
+      run: |
+        {
+          echo "remotes:"
+          git remote -v | sed 's/^/  - /'
+        } > remote_info.yml
+        
+        # Verify it worked
+        echo "Generated file:"
+        cat remote_info.yml
         
     # Step 1: Ambil kode terbaru dari branch master
     - name: Pull latest changes
